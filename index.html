@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aiHPL | AI Honesty & Psychology Lab</title>
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --text: #e0e0e0;
+            --accent: #00ff41; /* Terminal Green */
+            --border: #333;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            width: 100%;
+            max-width: 800px;
+            padding: 4rem 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .lab-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            letter-spacing: -1px;
+        }
+
+        .status-tag {
+            background: #1a1a1a;
+            padding: 0.2rem 0.6rem;
+            border: 1px solid var(--accent);
+            font-size: 0.8rem;
+            color: var(--accent);
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        h2 {
+            border-left: 4px solid var(--accent);
+            padding-left: 1rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .project-card {
+            border: 1px solid var(--border);
+            padding: 1.5rem;
+            margin-top: 1rem;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--accent);
+            background: #111;
+        }
+
+        .node-info {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 4rem 2rem;
+            font-size: 0.8rem;
+            color: #555;
+            text-align: center;
+        }
+
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="lab-title">aiHPL</div>
+        <div>AI Honesty & Psychology Lab</div>
+        <div class="status-tag">NODE STATUS: ACTIVE // ST. LOUIS, MO</div>
+    </header>
+
+    <main>
+        <section id="mission">
+            <h2>Mission</h2>
+            <p>We quantify the <strong>psychological evolution</strong> and <strong>strategic deception</strong> thresholds in agentic systems. Our goal is to establish a universal benchmark for AI honesty before mass autonomous integration.</p>
+        </section>
+
+        <section id="research">
+            <h2>Active Research</h2>
+            <div class="project-card">
+                <h3>The Inquisition Sandbox</h3>
+                <p>An adversarial environment designed to stress-test LLM integrity under high-stakes simulation. Currently auditing DeepSeek-V3.2 for "Self-Preservation Refusals."</p>
+                <div class="node-info">Latest Commit: 2026.03.21 // Methodology: Zero-Shot Adversarial Prompting</div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Access Node</h2>
+            <p>Inquiries regarding collaboration or data access: <br>
+            <strong><a href="mailto:aihpl.lab@gmail.com">aihpl.lab@gmail.com</a></strong></p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 aiHPL Sovereign Research Node. Built on GitHub Pages.
+    </footer>
+
+</body>
+</html>
