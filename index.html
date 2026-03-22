@@ -6,126 +6,225 @@
     <title>aiHPL | AI Honesty & Psychology Lab</title>
     <style>
         :root {
-            --bg: #0a0a0a;
-            --text: #e0e0e0;
-            --accent: #00ff41; /* Terminal Green */
-            --border: #333;
+            --bg: #ffffff;
+            --text: #1a1a1a;
+            --accent: #007aff; /* Minimalist Blue */
+            --border: #eaeaea;
+            --secondary: #86868b;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             background-color: var(--bg);
             color: var(--text);
-            font-family: 'Courier New', Courier, monospace;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            max-width: 900px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        header {
-            width: 100%;
-            max-width: 800px;
-            padding: 4rem 2rem;
-            border-bottom: 1px solid var(--border);
+        .nav-logo {
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-size: 1.2rem;
         }
 
-        .lab-title {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--accent);
-            letter-spacing: -1px;
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: var(--secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
         }
 
-        .status-tag {
-            background: #1a1a1a;
-            padding: 0.2rem 0.6rem;
-            border: 1px solid var(--accent);
-            font-size: 0.8rem;
-            color: var(--accent);
-            display: inline-block;
-            margin-top: 1rem;
-        }
+        .nav-links a:hover { color: var(--text); }
 
+        /* Main Content */
         main {
-            width: 100%;
             max-width: 800px;
-            padding: 2rem;
+            margin: 120px auto 0;
+            padding: 0 2rem;
         }
 
-        section {
+        header {
+            padding-bottom: 4rem;
+            border-bottom: 1px solid var(--border);
             margin-bottom: 4rem;
         }
 
-        h2 {
-            border-left: 4px solid var(--accent);
-            padding-left: 1rem;
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin: 0;
+        }
+
+        .subtitle {
             font-size: 1.2rem;
+            color: var(--secondary);
+            margin-top: 0.5rem;
+        }
+
+        section {
+            margin-bottom: 5rem;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: var(--secondary);
+            margin-bottom: 2rem;
         }
 
-        .project-card {
-            border: 1px solid var(--border);
-            padding: 1.5rem;
+        .research-item {
+            margin-bottom: 3rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            font-size: 1.1rem;
+            color: #424245;
+            max-width: 600px;
+        }
+
+        .meta {
+            font-size: 0.85rem;
+            color: var(--secondary);
             margin-top: 1rem;
-            transition: 0.3s;
+            font-family: "SF Mono", Menlo, monospace;
         }
 
-        .project-card:hover {
-            border-color: var(--accent);
-            background: #111;
+        /* Infrastructure Table */
+        .infra-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            border-top: 1px solid var(--border);
+            padding-top: 2rem;
         }
 
-        .node-info {
+        .infra-label {
             font-size: 0.9rem;
-            color: #888;
+            font-weight: 600;
+        }
+
+        .infra-value {
+            font-size: 0.9rem;
+            color: var(--secondary);
         }
 
         footer {
-            margin-top: auto;
             padding: 4rem 2rem;
-            font-size: 0.8rem;
-            color: #555;
+            border-top: 1px solid var(--border);
             text-align: center;
+            font-size: 0.8rem;
+            color: var(--secondary);
         }
 
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+            .infra-grid { grid-template-columns: 1fr; }
+            .nav-links { display: none; } /* Mobile simplicity */
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <div class="lab-title">aiHPL</div>
-        <div>AI Honesty & Psychology Lab</div>
-        <div class="status-tag">NODE STATUS: ACTIVE // ST. LOUIS, MO</div>
-    </header>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">aiHPL</div>
+            <div class="nav-links">
+                <a href="#mission">Mission</a>
+                <a href="#research">Research</a>
+                <a href="#infrastructure">Infrastructure</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
     <main>
+        <header>
+            <h1>aiHPL</h1>
+            <div class="subtitle">AI Honesty & Psychology Laboratory</div>
+        </header>
+
         <section id="mission">
             <h2>Mission</h2>
-            <p>We quantify the <strong>psychological evolution</strong> and <strong>strategic deception</strong> thresholds in agentic systems. Our goal is to establish a universal benchmark for AI honesty before mass autonomous integration.</p>
+            <p class="description">
+                We are dedicated to the empirical study of <strong>strategic deception</strong> in autonomous systems. By bridging the gap between computational linguistics and behavioral psychology, we develop the metrics required to ensure agentic reliability in high-stakes environments.
+            </p>
         </section>
 
         <section id="research">
             <h2>Active Research</h2>
-            <div class="project-card">
-                <h3>The Inquisition Sandbox</h3>
-                <p>An adversarial environment designed to stress-test LLM integrity under high-stakes simulation. Currently auditing DeepSeek-V3.2 for "Self-Preservation Refusals."</p>
-                <div class="node-info">Latest Commit: 2026.03.21 // Methodology: Zero-Shot Adversarial Prompting</div>
+            <div class="research-item">
+                <h3>Deception Analysis Framework (DAF)</h3>
+                <p class="description">A standardized testbed for evaluating the integrity of autonomous agents. Our current research focuses on identifying "Self-Preservation Refusals" in the DeepSeek-V3.2 architecture.</p>
+                <div class="meta">Status: Ongoing // Method: Adversarial Stress Testing</div>
+            </div>
+        </section>
+
+        <section id="infrastructure">
+            <h2>Laboratory Infrastructure</h2>
+            <div class="infra-grid">
+                <div>
+                    <div class="infra-label">Location</div>
+                    <div class="infra-value">St. Louis Research Facility</div>
+                </div>
+                <div>
+                    <div class="infra-label">Primary Compute</div>
+                    <div class="infra-value">Localized NVIDIA Tensor-Core Architecture</div>
+                </div>
+                <div>
+                    <div class="infra-label">Data Privacy</div>
+                    <div class="infra-value">Isolated Air-Gapped Analysis Environment</div>
+                </div>
+                <div>
+                    <div class="infra-label">Frameworks</div>
+                    <div class="infra-value">PyTorch / Hugging Face / Custom DAF-Protocol</div>
+                </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Access Node</h2>
-            <p>Inquiries regarding collaboration or data access: <br>
-            <strong><a href="mailto:aihpl.lab@gmail.com">aihpl.lab@gmail.com</a></strong></p>
+            <h2>Contact</h2>
+            <p class="description">For inquiries regarding research collaboration or data access, please contact the laboratory administration.</p>
+            <p><strong><a href="mailto:aihpl.lab@gmail.com" style="color: var(--accent); text-decoration: none;">aihpl.lab@gmail.com</a></strong></p>
         </section>
     </main>
 
     <footer>
-        &copy; 2026 aiHPL Sovereign Research Node. Built on GitHub Pages.
+        &copy; 2026 AI Honesty & Psychology Lab. All rights reserved.
     </footer>
 
 </body>
